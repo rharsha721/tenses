@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Tense Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: 30px auto;
+            font-size: 1.2rem;
+        }
+        .question {
+            font-weight: bold;
+        }
+        .option {
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            background: white;
+            cursor: pointer;
+        }
+        .correct {
+            background-color: #28a745 !important;
+            color: white;
+        }
+        .wrong {
+            background-color: #dc3545 !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container quiz-container">
+        <div class="card p-4 shadow-lg">
+            <h2 class="text-center mb-4">Past Tense Quiz</h2>
+            <form id="quizForm">
+                <div id="questions">
+                    <!-- Questions will be injected here -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            { q: "Select the past perfect tense:", options: ["caught", "had caught", "will be catching"], answer: 1 },
+            { q: "I ____ my homework before dinner. (Past Perfect)", options: ["did", "had done", "do"], answer: 1 },
+            { q: "They ____ when the phone rang. (Past Continuous)", options: ["slept", "had slept", "were sleeping"], answer: 2 },
+            { q: "She ____ to the store yesterday. (Simple Past)", options: ["went", "had gone", "goes"], answer: 0 },
+            { q: "By the time we arrived, the movie ____ . (Past Perfect)", options: ["started", "had started", "is starting"], answer: 1 },
+            { q: "While I ____ TV, my mom was cooking. (Past Continuous)", options: ["watched", "was watching", "had watched"], answer: 1 },
+            { q: "He ____ in the company for 5 years before he left. (Past Perfect Continuous)", options: ["had been working", "was working", "worked"], answer: 0 },
+            { q: "I ____ a delicious meal yesterday. (Simple Past)", options: ["ate", "eat", "had eaten"], answer: 0 },
+            { q: "She ____ the guitar when I entered the room. (Past Continuous)", options: ["played", "had played", "was playing"], answer: 2 },
+            { q: "They ____ for an hour before the bus arrived. (Past Perfect Continuous)", options: ["had been waiting", "waited", "were waiting"], answer: 0 }
+        ];
+
+        function loadQuestions() {
+            let quizHTML = "";
+            questions.forEach((item, index) => {
+                quizHTML += `<div class='mb-3'>
+                    <p class='question'>${index + 1}. ${item.q}</p>`;
+                item.options.forEach((option, i) => {
+                    quizHTML += `<div class='option' data-q='${index}' data-index='${i}'>${option}</div>`;
+                });
+                quizHTML += `</div>`;
+            });
+            document.getElementById("questions").innerHTML = quizHTML;
+        }
+
+        $(document).on("click", ".option", function () {
+            let qIndex = $(this).data("q");
+            let selectedIndex = $(this).data("index");
+            let correctIndex = questions[qIndex].answer;
+            $(this).parent().find(".option").removeClass("correct wrong");
+            if (selectedIndex === correctIndex) {
+                $(this).addClass("correct");
+            } else {
+                $(this).addClass("wrong");
+                $(this).parent().find(`[data-index='${correctIndex}']`).addClass("correct");
+            }
+        });
+
+        loadQuestions();
+    </script>
+</body>
+</html>

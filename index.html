@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Past Tense</title>
+
+    
+    <style>
+        body {
+            background-color: lightpink;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            color: black;
+            padding: 2px;
+            border-radius: 4px;
+        }
+        .table-container {
+            max-width: 95%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow-x: auto; /* Enables horizontal scroll on small screens */
+        }
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d1ecf1;
+            transition: 0.3s;
+        }
+        /* Adjusting Search Input in Navbar */
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        .search-input {
+            width: 200px;
+        }
+        @media (max-width: 768px) {
+            .search-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: aqua;">
+        <a class="navbar-brand" href="https://www.youtube.com/@BtechLearns/videos?app=desktop" target="_blank" style="color:brown;">
+            <h3>BtechLearns</h3>
+        </a>
+        <a href="quiz.html" target="_blank"><h3>&nbsp;Quiz&nbsp;&nbsp;</h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto"></ul>
+            
+            <!-- Search Form in Navbar -->
+            <form class="search-form form-inline my-2 my-lg-0">
+                <input id="searchInput" class="form-control search-input mr-sm-2" type="text" placeholder="Search this page" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchText()">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Jumbotron Header -->
+    <div class="jumbotron text-center mt-5">
+        <h1 class="display-4" style="color: blueviolet;">Learn Grammar</h1>
+        <p class="lead">Learn past tense in detail with examples...</p>
+    </div>
+
+    <!-- Grammar Table -->
+    <div class="table-container">
+        <h2 class="text-center text-primary mb-4">Subject-Verb Agreement Table</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Present</th>
+                    <th>Past</th>
+                    <th>Do/Does</th>
+                    <th>Have/Has</th>
+                    <th>Listen</th>
+                    <th>Play</th>
+                </tr>
+            </thead>
+            <tbody id="content">
+                <tr>
+                    <td><b>I</b></td> <td>am</td> <td>Was</td> <td>do</td> <td>have</td> <td>Listen</td> <td>play</td>
+                </tr>
+                <tr>
+                    <td><b>You</b></td> <td>are</td> <td>Were</td> <td>do</td> <td>have</td> <td>Listen</td> <td>Play</td>
+                </tr>
+                <tr>
+                    <td><b>We</b></td> <td>are</td> <td>Were</td> <td>do</td> <td>have</td> <td>Listen</td> <td>Play</td>
+                </tr>
+                <tr>
+                    <td><b>He</b></td> <td>is</td> <td>Was</td> <td>does</td> <td>has</td> <td>Listens</td> <td>Plays</td>
+                </tr>
+                <tr>
+                    <td><b>She</b></td> <td>is</td> <td>Was</td> <td>does</td> <td>has</td> <td>Listens</td> <td>Plays</td>
+                </tr>
+                <tr>
+                    <td><b>It</b></td> <td>is</td> <td>Was</td> <td>does</td> <td>has</td> <td>Listens</td> <td>Plays</td>
+                </tr>
+                <tr>
+                    <td><b>They</b></td> <td>are</td> <td>Were</td> <td>do</td> <td>have</td> <td>Listen</td> <td>Play</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="container mt-5">
+        <h1 class="text-center text-primary">Past Tense</h1>
+        
+        <h2>1. Simple Past (Preterite Tense)</h2>
+        <p>The simple past tense is used to describe actions that started and finished in the past. It is often used with time expressions like yesterday, last week, in 2024, an hour ago, etc.</p>
+        <p><strong>Structural formula:</strong> Subject + verb (2nd form) + object.</p>
+        <h4>Examples:</h4>
+        <ul>
+            <li>I played football yesterday.</li>
+            <li>I ate my lunch an hour ago.</li>
+            <li>She woke up early in the morning.</li>
+            <li>You didn’t write a letter last week.</li>
+            <li>She spoke good English to the interviewer.</li>
+        </ul>
+        
+        <h2>2. Past Continuous</h2>
+        <p>The past continuous tense is used to describe an action that was happening in the past or a continuing action that was occurring.</p>
+        <p><strong>Structural formula:</strong> Subject + helping verb (was/were) + verb (ing) + object.</p>
+        <h4>Examples:</h4>
+        <ul>
+            <li>I was watching TV when you called.</li>
+            <li>She was reading a book while it was raining.</li>
+            <li>They were playing football all evening.</li>
+        </ul>
+        
+        <h2>3. Past Perfect Tense</h2>
+        <p>The past perfect tense is used to describe an action that occurred before another action in the past.</p>
+        <p><strong>Structural formula:</strong> Subject + had + verb (past participle) + object.</p>
+        <h4>Examples:</h4>
+        <ul>
+            <li>I had cooked the food before I ate it.</li>
+            <li>I had finished my homework before I went to bed.</li>
+            <li>She had packed her bags before the taxi arrived.</li>
+        </ul>
+        
+        <h2>4. Past Perfect Continuous</h2>
+        <p>The past perfect continuous tense is used to describe an action that was happening for a period of time before another past action or time.</p>
+        <p><strong>Structural formula:</strong> Subject + had been + verb (ing) + object.</p>
+        <h4>Examples:</h4>
+        <ul>
+            <li>I had been cooking for an hour before they arrived.</li>
+            <li>She had been studying all night before the exam started.</li>
+            <li>He had been working at the company for five years before he resigned.</li>
+        </ul>
+    </div>
+
+
+
+    
+
+    <script>
+        function searchText() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let content = document.getElementById("content").innerHTML;
+
+            if (input.trim() === "") {
+                alert("Enter a word to search!");
+                return;
+            }
+
+            // Remove previous highlights
+            content = content.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
+
+            let regex = new RegExp(`(${input})`, "gi");
+            let newContent = content.replace(regex, '<span class="highlight">$1</span>');
+
+            document.getElementById("content").innerHTML = newContent;
+        }
+    </script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="bootstrap.js"></script>
+
+</body>
+</html>
